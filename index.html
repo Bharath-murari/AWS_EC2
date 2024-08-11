@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Delights by Bharath</title>
+    <style>
+        :root {
+            --primary-color: #FFA500;
+            --secondary-color: #4CAF50;
+            --accent-color: #FF4081;
+            --text-color: #333;
+            --bg-color: #F7F7F7;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .dish {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .dish:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .dish img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .dish-content {
+            padding: 1.5rem;
+        }
+        .dish h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .dish p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #random-dish-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 50px;
+            margin: 2rem auto;
+            display: block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        #random-dish-btn:hover {
+            background-color: #E91E63;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indian Delights</h1>
+        <p class="subtitle">by Bharath (22BCE1393)</p>
+    </header>
+    <main>
+        <div class="dish">
+            <div class="dish-content">
+                <h2>Butter Chicken</h2>
+                <p>Tender chicken pieces in a rich, creamy tomato-based sauce, flavored with aromatic spices.</p>
+            </div>
+        </div>
+        <div class="dish">
+            <div class="dish-content">
+                <h2>Masala Dosa</h2>
+                <p>A crispy fermented rice and lentil crepe filled with spiced potato mixture, served with chutney and sambar.</p>
+            </div>
+        </div>
+        <div class="dish">
+            <div class="dish-content">
+                <h2>Paneer Tikka</h2>
+                <p>Cubes of paneer (Indian cottage cheese) marinated in spices and grilled to perfection.</p>
+            </div>
+        </div>
+    </main>
+    <button id="random-dish-btn">Show me a random Indian dish!</button>
+    <footer>
+        <p>&copy; 2024 Indian Delights by Bharath. All rights reserved.</p>
+    </footer>
+    <script>
+        const dishes = [
+            { name: "Butter Chicken", description: "Tender chicken pieces in a rich, creamy tomato-based sauce, flavored with aromatic spices." },
+            { name: "Masala Dosa", description: "A crispy fermented rice and lentil crepe filled with spiced potato mixture, served with chutney and sambar." },
+            { name: "Paneer Tikka", description: "Cubes of paneer (Indian cottage cheese) marinated in spices and grilled to perfection." },
+            { name: "Biryani", description: "Fragrant basmati rice cooked with meat or vegetables, aromatic spices, and herbs." },
+            { name: "Chole Bhature", description: "Spicy chickpea curry served with deep-fried bread, a popular North Indian dish." }
+        ];
+
+        const randomDishBtn = document.getElementById("random-dish-btn");
+        randomDishBtn.addEventListener("click", () => {
+            const randomIndex = Math.floor(Math.random() * dishes.length);
+            const randomDish = dishes[randomIndex];
+            alert(`Try this Indian dish: ${randomDish.name}\n\n${randomDish.description}`);
+        });
+    </script>
+</body>
+</html>
